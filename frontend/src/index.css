@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy: #1a365d;
+    --color-navy-light: #2b6cb0;
+    --color-gold: #d4a843;
+    --color-success: #38a169;
+    --color-warning: #d69e2e;
+    --color-danger: #e53e3e;
+  }
+
+  body {
+    @apply bg-navy-50 text-navy-950 font-sans;
+  }
+
+  * {
+    @apply border-navy-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-navy-900 text-white px-6 py-2.5 rounded-lg font-semibold
+           hover:bg-navy-800 active:bg-navy-950
+           transition-all duration-200 ease-in-out
+           shadow-md hover:shadow-lg
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-navy-900 px-6 py-2.5 rounded-lg font-semibold
+           border-2 border-navy-200
+           hover:bg-navy-50 hover:border-navy-300
+           transition-all duration-200 ease-in-out
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-gold {
+    @apply bg-gold-500 text-navy-950 px-6 py-2.5 rounded-lg font-semibold
+           hover:bg-gold-600 active:bg-gold-700
+           transition-all duration-200 ease-in-out
+           shadow-md hover:shadow-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md border border-navy-100
+           transition-all duration-300 ease-in-out
+           hover:shadow-lg;
+  }
+
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-xl rounded-xl shadow-lg
+           border border-white/20;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg border border-navy-200
+           bg-white text-navy-900
+           placeholder:text-navy-400
+           focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-navy-700 mb-1.5;
+  }
+
+  .badge-low {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold
+           bg-green-100 text-green-800 border border-green-200;
+  }
+
+  .badge-medium {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold
+           bg-amber-100 text-amber-800 border border-amber-200;
+  }
+
+  .badge-high {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold
+           bg-red-100 text-red-800 border border-red-200;
+  }
+
+  .stat-card {
+    @apply card p-6 flex flex-col gap-2;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-navy-900 tracking-tight;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-navy-300 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-navy-400;
+}
+
+/* Score gauge animation */
+.score-circle {
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+
+/* Fade-in animation for result panels */
+.result-panel {
+  animation: slideUp 0.6s ease-out forwards;
+}

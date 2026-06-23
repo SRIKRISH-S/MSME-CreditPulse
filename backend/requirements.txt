@@ -1,0 +1,14 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+sqlalchemy==2.0.31
+pydantic==2.8.2
+pydantic-settings==2.4.0
+python-dotenv==1.0.1
+python-multipart==0.0.9
+xgboost==2.1.0
+shap>=0.52
+scikit-learn>=1.6
+pandas>=2.2
+numpy>=2.1
+joblib>=1.4
+reportlab>=4.2
