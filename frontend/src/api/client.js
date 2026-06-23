@@ -1,7 +1,8 @@
 import axios from 'axios'
 
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: isLocal ? '/api' : 'https://msme-creditpulse.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
 })
 
